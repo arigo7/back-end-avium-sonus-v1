@@ -1,0 +1,44 @@
+{
+    "bird1": {
+        "Selection": "1",
+        "View": "Spectrogram 1",
+        "Channel": "1",
+        "Begin File": "new_recording_271.wav",
+        "Begin Time (s)": "6.0",
+        "End Time (s)": "9.0",
+        "Low Freq (Hz)": "150",
+        "High Freq (Hz)": "15000",
+        "Species Code": "bkcchi",
+        "Common Name": "Black-capped Chickadee",
+        "Confidence": "0.9755522678977092",
+        "Rank": "1"
+    },
+    "bird2": {
+        "Selection": "2",
+        "View": "Spectrogram 1",
+        "Channel": "1",
+        "Begin File": "new_recording_271.wav",
+        "Begin Time (s)": "9.0",
+        "End Time (s)": "12.0",
+        "Low Freq (Hz)": "150",
+        "High Freq (Hz)": "15000",
+        "Species Code": "roster",
+        "Common Name": "Roseate Tern",
+        "Confidence": "0.10994622295640027",
+        "Rank": "1"
+    },
+    "bird3": {
+        "Selection": "3",
+        "View": "Spectrogram 1",
+        "Channel": "1",
+        "Begin File": "new_recording_271.wav",
+        "Begin Time (s)": "0.0",
+        "End Time (s)": "3.0",
+        "Low Freq (Hz)": "150",
+        "High Freq (Hz)": "15000",
+        "Species Code": "bkcchi",
+        "Common Name": "Black-capped Chickadee",
+        "Confidence": "0.6351441829904221",
+        "Rank": "1"
+    }
+}
