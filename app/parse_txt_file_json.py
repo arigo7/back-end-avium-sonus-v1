@@ -22,13 +22,14 @@ def parse_output_file(txt_filename):
     into a final dictionary that becomes a json object for returning a 
     response
     '''
-    dict_1 = {}
+    # dict_1 = {}
+    birds = []
     path = '/Users/ada/Developer/projects/capstone/BirdNET/outputs/'
     filename = path + txt_filename
     print(filename)
-    dic_fields = ['Selection', 'View', 'Channel', 'Begin File', \
-        'Begin Time (s)', 'End Time (s)','Low Freq (Hz)','High Freq (Hz)', \
-            'Species Code','Common Name', 'Confidence', 'Rank']
+    dic_fields = ['id', 'view', 'channel', 'beginFile', \
+        'beginTimeSec', 'endTimeSec','lowFreqHz','highFreqHz', \
+            'speciesCode','commonName', 'confidence', 'rank']
     
     with open(filename) as file:
 
@@ -39,12 +40,13 @@ def parse_output_file(txt_filename):
                 description = list(line.strip().split('\t', 12))
                 print(description)
                 # for automatic creation of id for each bird
-                bird ='bird'+ str(l)
+                # bird ='bird'+ str(l)
             
                 # loop variable
                 i = 0
 
                 # intermediate dictionary for each line of output txt file
+                
                 dict_2 = {}
                 while i<len(dic_fields):
                     
@@ -54,14 +56,17 @@ def parse_output_file(txt_filename):
                         
                 # appending the record of each bird to
                 # the main dictionary
-                dict_1[bird]= dict_2
+                # dict_1[bird]= dict_2
+                birds.append(dict_2) 
             l = l + 1
 
     # creating json file for return format      
     out_file = open("test2.json", "w")  # in the directory outputs
-    json.dump(dict_1, out_file, indent = 4)
+    # json.dump(dict_1, out_file, indent = 4)
+    json.dump(birds, out_file, indent = 4)
     out_file.close()
-    return dict_1
+    # return dict_1
+    return birds
 
 ## TESTING IT WORKS
 

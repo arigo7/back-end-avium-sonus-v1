@@ -7,7 +7,7 @@ from app.parse_txt_file_json import get_file_name, parse_output_file
 # from app.models.file import File 
 # from app.models.file_collection import Collection
 # from sqlalchemy import asc, desc # to add feature to sort - PROB WON'T USE
-# import json
+import json
 
 # Allowed extensions that BirdNET can handle
 ALLOWED_EXTENSIONS = {'wav', 'm4a'}
@@ -21,12 +21,15 @@ def allowed_file(filename):
 
 bird_bp = Blueprint("bird", __name__, url_prefix="/")
 
-# # JSON FILE - ROUTE - route function sends successful connection response
-# #####################################################################
-# @bird_bp.route("/jsonfile", methods=['GET'], strict_slashes=False)
-# def display_json():
-#     json_file = json.load()
-#     return make_response(welcome_message, 200)
+# JSON FILE - ROUTE - route function sends successful connection response
+#####################################################################
+@bird_bp.route("/jsonfile", methods=['GET'], strict_slashes=False)
+def display_json():
+    
+    path = f"/Users/ada/Developer/projects/capstone/back-end-avium-sonus-v1/test2.json"
+    with open (path) as json_file:
+        data = json.load(json_file)
+    return jsonify(data), 200
 
 # HOME - ROUTE - route lets you into the gates of Avium Sonus
 #####################################################################
@@ -101,7 +104,7 @@ def upload_file():
             # this return is just to double check that file is being handled
             # now return also includes the whole process of parsing text file
             # outputed by BirdNET into a JSON object
-            return make_response(results_json, 200)  
+            return jsonify(results_json), 200 
             
             # ADD 400 RESPONSE!
             
