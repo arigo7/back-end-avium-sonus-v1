@@ -2,7 +2,7 @@ from flask import Flask
 from dotenv import load_dotenv # loads variables from .env
 from flask_cors import CORS # Cross origin resource sharing - allows request from same computer?
 import os # module provides functions for interating with the operatin system  (command line stuff) 
-
+import secrets
 #from flask_sqlalchemy import SQLAlchemy  - don't have a db - don't need now
 # from flask_migrate import Migrate  # if no models, prob don't need this either
 
@@ -18,8 +18,8 @@ def create_app(test_config=None):
     app = Flask(__name__)
     # to keep order of sorted dictionary passed to jsonify() function
     app.config['JSON_SORT_KEYS'] = False 
-   
     app.config['UPLOAD_FOLDER'] = os.environ.get("UPLOAD_FOLDER")
+    app.config['SECRET_KEY'] = secrets.token_urlsafe(16)
 
     # track modifications for database tables?
     # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
