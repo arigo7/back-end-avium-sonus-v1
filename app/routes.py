@@ -49,7 +49,7 @@ def upload_audio():
             return redirect(request.url) # redirect to where request was sent from
 
         # here add latitude and longitude upload
-        lat, lon = 47.34, -122.890
+        lat, lon = 47.6418, -122.3463
         
 
         # secure_filename returns a secure version of it, then the 
