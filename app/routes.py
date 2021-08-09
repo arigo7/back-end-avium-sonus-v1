@@ -3,6 +3,7 @@ from flask import Blueprint, request, jsonify, make_response, flash, \
 from werkzeug.utils import secure_filename
 import os
 from app.parse_txt_file_json import get_file_name, parse_output_file
+from pprint import pprint
 # from app import db
 # from app.models.file import File 
 # from app.models.file_collection import Collection
@@ -39,7 +40,6 @@ def welcome_message():
     welcome_message = 'Welcome to Avium Sonus'
     return make_response(welcome_message, 200)
 
-
 @bird_bp.route("/bird_stream", methods=['GET', 'POST'], strict_slashes=False)
 def upload_audio():
     if request.method == 'POST':
@@ -49,8 +49,9 @@ def upload_audio():
             return redirect(request.url) # redirect to where request was sent from
 
         # here add latitude and longitude upload
-        lat, lon = 47.6418, -122.3463
-        
+        lat = float(request.headers.get("latitude")) or -1
+        lon = float(request.headers.get("longitude")) or -1
+        print(lat, lon)
 
         # secure_filename returns a secure version of it, then the 
         # file(now 'filename') can safely be stored on a regular file 
