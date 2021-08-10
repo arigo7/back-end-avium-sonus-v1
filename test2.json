@@ -1,1 +1,72 @@
-[]
+[
+    {
+        "id": "1",
+        "view": "Spectrogram 1",
+        "channel": "1",
+        "beginFile": "1628581158.359375",
+        "beginTimeSec": "12.0",
+        "endTimeSec": "15.0",
+        "lowFreqHz": "150",
+        "highFreqHz": "15000",
+        "speciesCode": "houfin",
+        "commonName": "House Finch",
+        "confidence": "0.9463722377937054",
+        "rank": "1"
+    },
+    {
+        "id": "2",
+        "view": "Spectrogram 1",
+        "channel": "1",
+        "beginFile": "1628581158.359375",
+        "beginTimeSec": "3.0",
+        "endTimeSec": "6.0",
+        "lowFreqHz": "150",
+        "highFreqHz": "15000",
+        "speciesCode": "houfin",
+        "commonName": "House Finch",
+        "confidence": "0.6445485548744065",
+        "rank": "1"
+    },
+    {
+        "id": "3",
+        "view": "Spectrogram 1",
+        "channel": "1",
+        "beginFile": "1628581158.359375",
+        "beginTimeSec": "6.0",
+        "endTimeSec": "9.0",
+        "lowFreqHz": "150",
+        "highFreqHz": "15000",
+        "speciesCode": "houfin",
+        "commonName": "House Finch",
+        "confidence": "0.7673515108197273",
+        "rank": "1"
+    },
+    {
+        "id": "4",
+        "view": "Spectrogram 1",
+        "channel": "1",
+        "beginFile": "1628581158.359375",
+        "beginTimeSec": "9.0",
+        "endTimeSec": "12.0",
+        "lowFreqHz": "150",
+        "highFreqHz": "15000",
+        "speciesCode": "houfin",
+        "commonName": "House Finch",
+        "confidence": "0.5475027575036409",
+        "rank": "1"
+    },
+    {
+        "id": "5",
+        "view": "Spectrogram 1",
+        "channel": "1",
+        "beginFile": "1628581158.359375",
+        "beginTimeSec": "0.0",
+        "endTimeSec": "3.0",
+        "lowFreqHz": "150",
+        "highFreqHz": "15000",
+        "speciesCode": "houfin",
+        "commonName": "House Finch",
+        "confidence": "0.5410228104288538",
+        "rank": "1"
+    }
+]
