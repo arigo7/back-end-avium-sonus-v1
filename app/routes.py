@@ -63,15 +63,15 @@ def upload_audio():
         # Name the file as the current time
         timestamp = time.time()
         filename = secure_filename(f"{timestamp}")
+
         # saves file to folder path directory (currently in my computer) 
-        # where it'll be accessed to be analyzed. From here on, I'll be 
+        # where it'll be accessed to be analyzed. From here on, I'll be filename
         with open(os.path.join(os.environ.get("UPLOAD_FOLDER"), filename), "bw") as f:
             chunk_size = 4096
             while True:
                 chunk = request.stream.read(chunk_size)
                 if len(chunk) == 0:
                     break
-
                 f.write(chunk)
 
         # Now that uploading folder works, call birdnet to analyze with my command like this:
@@ -172,9 +172,7 @@ def upload_file():
             # now return also includes the whole process of parsing text file
             # outputed by BirdNET into a JSON object
             return jsonify(results_json), 200 
-            
-            # ADD 400 RESPONSE!
-            
+                        
     # this is where my swift integration  has to go I think?           
     # get from swift client, default is 1
     return'''

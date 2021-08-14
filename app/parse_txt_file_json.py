@@ -46,7 +46,7 @@ def parse_output_file(txt_filename):
                 description[10] = round(float((description[10])), 2)
 
                 
-                pprint(description[10])
+                # pprint(description[10])
 
                 print(description)
                 # for automatic creation of id for each bird
