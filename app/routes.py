@@ -20,7 +20,8 @@ def allowed_file(filename):
 bird_bp = Blueprint("bird", __name__, url_prefix="/")
 
 # JSON FILE - ROUTE - route function sends successful connection response
-# test route  - route lets you into the gates of Avium Sonus
+# test route  - route lets you into the gates of Avium Sonus and opens
+# json file
 #####################################################################
 @bird_bp.route("/jsonfile", methods=['GET'], strict_slashes=False)
 def display_json():
@@ -73,8 +74,7 @@ def upload_audio():
 
                 f.write(chunk)
 
-
-        # Now that uploading folder works, call birdnet to analyze
+        # Now that uploading folder works, call birdnet to analyze with my command like this:
         # python3 analyze.py --i uploads/new_recording_268.m4a  --o outputs --lat 47.613 --lon -122.342
         BIRDNET_FOLDER = 'cd ../BirdNET/' # move to the right folder
         ACTIVATE_VENV = 'source venv/bin/activate' # activate_venv 
@@ -92,7 +92,7 @@ def upload_audio():
         # outputed by BirdNET into a JSON object
         return jsonify(results_json), 200 
         
-        # ADD 400 RESPONSE!
+        # ADD 400 RESPONSE!??
         
     # testing it uploads
     return'''
@@ -110,7 +110,7 @@ def upload_audio():
         </form>
     '''
 
-# BIRD - ROUTE - route function receives a file, lat, lon inputs from 
+# BIRD - ROUTE - route function receives a file via HTML web, lat, lon inputs from 
 # client (HTML browser). It runs birdnet and returns a result
 #####################################################################
 @bird_bp.route("/bird", methods=['GET', 'POST'], strict_slashes=False)
