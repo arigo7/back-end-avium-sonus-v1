@@ -92,7 +92,7 @@ def upload_audio():
         # outputed by BirdNET into a JSON object
         return jsonify(results_json), 200 
         
-        # ADD 400 RESPONSE!??
+        # TO DO: ADD 400 RESPONSE
         
     # testing it uploads
     return'''
@@ -144,7 +144,7 @@ def upload_file():
             # where it'll be accessed to be analyzed. From here on, I'll be 
             # using filename (not 'file') when calling analyze.py
 
-            # app doesn't work here - why?
+            # TODO: check why it doesn't work here 
             # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             file.save(os.path.join(os.environ.get("UPLOAD_FOLDER"), filename))
 
@@ -155,7 +155,7 @@ def upload_file():
             ACTIVATE_VENV = 'source venv/bin/activate' # activate_venv 
             bird_net_run = f'python3 analyze.py --i uploads/{filename} --o outputs --lat {lat} --lon {lon}'
             
-            # THIS DOESN'T WORK - WHY?
+            # TODO: Check into this 
             # os.system(BIRDNET_FOLDER)
             # # activate_venv 
             # os.system(ACTIVATE_VENV)
@@ -173,7 +173,7 @@ def upload_file():
             # outputed by BirdNET into a JSON object
             return jsonify(results_json), 200 
                         
-    # this is where my swift integration  has to go I think?           
+    # this is where my swift integration  has to go          
     # get from swift client, default is 1
     return'''
     <!doctype html>
